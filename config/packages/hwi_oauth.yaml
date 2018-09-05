@@ -1,0 +1,21 @@
+hwi_oauth:
+    connect:
+         account_connector: my.custom.user_provider
+    firewall_names: [secured_area]
+    fosub:
+        username_iterations: 30
+        properties:
+           google:   google_id
+    # https://github.com/hwi/HWIOAuthBundle/blob/master/Resources/doc/2-configuring_resource_owners.md
+    resource_owners:
+        google:
+            type:                google
+            client_id:           http://662246713106-bo7k7ovkcbfc79ruijitnvrlnukfn3an.apps.googleusercontent.com
+            client_secret:       tuvce2RQtjsvmx1_cT7lX4my
+            scope:               "email"
+            options:
+                display: popup
+                csrf: true
+
+
+

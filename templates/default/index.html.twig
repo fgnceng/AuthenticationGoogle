@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <a href="{{ path('login_check_google', {'service': 'google' }) }}">With Login Google</a>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        // Handle facebook callback
+        if (window.location.hash && window.location.hash == '#_=_') {
+            window.location.hash = '';
+        }
+    </script>
+{% endblock %}
