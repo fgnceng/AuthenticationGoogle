@@ -6,12 +6,12 @@ hwi_oauth:
         username_iterations: 30
         properties:
            google:   google_id
-    # https://github.com/hwi/HWIOAuthBundle/blob/master/Resources/doc/2-configuring_resource_owners.md
+
     resource_owners:
         google:
-            type:                google
-            client_id:           http://662246713106-bo7k7ovkcbfc79ruijitnvrlnukfn3an.apps.googleusercontent.com
-            client_secret:       tuvce2RQtjsvmx1_cT7lX4my
+            type:               google
+            client_id:          196047792813-pjv0k8v7femmtf8kpji8u4d21vpen9vs.apps.googleusercontent.com
+            client_secret:      v6Dn4Pon5hp0jUrFdLkMgk3i
             scope:               "email"
             options:
                 display: popup

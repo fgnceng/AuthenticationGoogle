@@ -25,31 +25,28 @@ class User extends BaseUser
 
     }
 
-
-    /**
-     * @ORM\Column(type="string", name="facebook_id", nullable=true)
-     */
-    protected $facebookId;
-
     /**
      * @ORM\Column(type="string", name="google_id", nullable=true)
      */
     protected $googleId;
 
+
+   protected $googleAccesToken;
+
     /**
      * @return mixed
      */
-    public function getFacebookId()
+    public function getGoogleAccesToken()
     {
-        return $this->facebookId;
+        return $this->googleAccesToken;
     }
 
     /**
-     * @param mixed $facebookId
+     * @param mixed $googleAccesToken
      */
-    public function setFacebookId($facebookId)
+    public function setGoogleAccesToken($googleAccesToken): void
     {
-        $this->facebookId = $facebookId;
+        $this->googleAccesToken = $googleAccesToken;
     }
 
     /**

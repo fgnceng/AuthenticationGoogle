@@ -30,12 +30,6 @@ services:
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
 
-    hwi_oauth.user.provider.fosub_bridge:
-        class: HWI\Bundle\OAuthBundle\Security\Core\User\FOSUBUserProvider
-        arguments:
-            - '@fos_user.user_manager'
-            - ['pass properties as array']
-
     my.custom.user_provider:
-            class:        App\Security\Core\User\MyFOSUBUserProvider
-            arguments: ['@fos_user.user_manager', { google: google_id }]
+            class:      App\Security\Core\User\MyFOSUBUserProvider
+            arguments: ['@fos_user.user_manager', { google: google_id}]

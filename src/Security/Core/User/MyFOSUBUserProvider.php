@@ -40,6 +40,18 @@ class MyFOSUBUserProvider extends BaseFOSUBProvider
         $userEmail = $response->getEmail();
         $user = $this->userManager->findUserByEmail($userEmail);
 
+        /* @var $response \HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface */
+          $data = $response->getData();
+
+        dump(
+            $data['recommendations-received']
+        );
+
+
+        /* @var $response \HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface */
+        dump(
+            $response->getRealName()
+        );
         // if null just create new user and set it properties
         if (null === $user) {
             $username = $response->getRealName();
