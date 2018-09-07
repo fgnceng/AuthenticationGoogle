@@ -6,6 +6,7 @@ hwi_oauth:
         username_iterations: 30
         properties:
            google:   google_id
+           facebook: facebook_id
 
     resource_owners:
         google:
@@ -17,5 +18,8 @@ hwi_oauth:
                 display: popup
                 csrf: true
 
-
-
+        facebook:
+            type:              facebook
+            client_id:         329299620966358
+            client_secret:     93339391b04e1e72bad9575749815787
+            scope:            ""

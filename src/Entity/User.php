@@ -18,6 +18,14 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+    /** @ORM\Column(name="facebook_id", type="string", length=255, nullable=true) */
+    protected $facebook_id;
+    /** @ORM\Column(name="facebook_access_token", type="string", length=255, nullable=true) */
+    protected $facebook_access_token;
+    /** @ORM\Column(name="google_id", type="string", length=255, nullable=true) */
+    protected $google_id;
+    /** @ORM\Column(name="google_access_token", type="string", length=255, nullable=true) */
+    protected $google_access_token;
 
     public function __construct()
     {
@@ -25,43 +33,109 @@ class User extends BaseUser
 
     }
 
-    /**
-     * @ORM\Column(type="string", name="google_id", nullable=true)
-     */
-    protected $googleId;
-
-
-   protected $googleAccesToken;
+    //YOU CAN ADD MORE CODE HERE !
 
     /**
-     * @return mixed
+     * Get id
+     *
+     * @return integer
      */
-    public function getGoogleAccesToken()
+    public function getId()
     {
-        return $this->googleAccesToken;
+        return $this->id;
     }
 
     /**
-     * @param mixed $googleAccesToken
+     * Set facebook_id
+     *
+     * @param string $facebookId
+     * @return User
      */
-    public function setGoogleAccesToken($googleAccesToken): void
+    public function setFacebookId($facebookId)
     {
-        $this->googleAccesToken = $googleAccesToken;
+        $this->facebook_id = $facebookId;
+
+        return $this;
     }
 
     /**
-     * @return mixed
+     * Get facebook_id
+     *
+     * @return string
      */
-    public function getGoogleId()
+    public function getFacebookId()
     {
-        return $this->googleId;
+        return $this->facebook_id;
     }
 
     /**
-     * @param mixed $googleId
+     * Set facebook_access_token
+     *
+     * @param string $facebookAccessToken
+     * @return User
+     */
+    public function setFacebookAccessToken($facebookAccessToken)
+    {
+        $this->facebook_access_token = $facebookAccessToken;
+
+        return $this;
+    }
+
+    /**
+     * Get facebook_access_token
+     *
+     * @return string
+     */
+    public function getFacebookAccessToken()
+    {
+        return $this->facebook_access_token;
+    }
+
+    /**
+     * Set google_id
+     *
+     * @param string $googleId
+     * @return User
      */
     public function setGoogleId($googleId)
     {
-        $this->googleId = $googleId;
+        $this->google_id = $googleId;
+
+        return $this;
     }
+
+    /**
+     * Get google_id
+     *
+     * @return string
+     */
+    public function getGoogleId()
+    {
+        return $this->google_id;
+    }
+
+    /**
+     * Set google_access_token
+     *
+     * @param string $googleAccessToken
+     * @return User
+     */
+    public function setGoogleAccessToken($googleAccessToken)
+    {
+        $this->google_access_token = $googleAccessToken;
+
+        return $this;
+    }
+
+    /**
+     * Get google_access_token
+     *
+     * @return string
+     */
+    public function getGoogleAccessToken()
+    {
+        return $this->google_access_token;
+    }
+
+
 }

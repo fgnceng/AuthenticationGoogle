@@ -17,6 +17,7 @@ class MyFOSUBUserProvider extends BaseFOSUBProvider
         // get property from provider configuration by provider name
         // , it will return `facebook_id` in that case (see service definition below)
         $property = $this->getProperty($response);
+
         $username = $response->getUsername(); // get the unique user identifier
 
         //we "disconnect" previously connected users
@@ -41,17 +42,9 @@ class MyFOSUBUserProvider extends BaseFOSUBProvider
         $user = $this->userManager->findUserByEmail($userEmail);
 
         /* @var $response \HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface */
-          $data = $response->getData();
-
-        dump(
-            $data['recommendations-received']
-        );
+        $data = $response->getData();
 
 
-        /* @var $response \HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface */
-        dump(
-            $response->getRealName()
-        );
         // if null just create new user and set it properties
         if (null === $user) {
             $username = $response->getRealName();
@@ -66,7 +59,6 @@ class MyFOSUBUserProvider extends BaseFOSUBProvider
         $serviceName = $response->getResourceOwner()->getName();
         $setter = 'set' . ucfirst($serviceName) . 'AccessToken';
         $user->$setter($response->getAccessToken());//update access token
-
         return $user;
     }
 }

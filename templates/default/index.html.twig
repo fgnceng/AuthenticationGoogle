@@ -1,8 +1,8 @@
-{% extends "HWIOAuthBundle:Connect:login.html.twig" %}
+{% extends  "base.html.twig" %}
 
 {% block body %}
     <a href="{{ path('hwi_oauth_service_redirect', {service: "google" }) }}">With Login Google</a>
-
+    <a href="{{ path('hwi_oauth_service_redirect', {service: "facebook" }) }}">With Login Facebook</a>
 {% endblock %}
 
 {% block javascripts %}

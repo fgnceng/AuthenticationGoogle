@@ -24,6 +24,7 @@ security:
             oauth:
                 resource_owners:
                   google:         "/login/check-google"
+                  facebook:       "/login/check-facebook"
                 login_path:        /login
                 failure_path:      /login
 
@@ -35,8 +36,6 @@ security:
         login:
            pattern: ^/login$
            security: false
-
-
 
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }

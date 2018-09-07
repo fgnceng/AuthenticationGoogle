@@ -2,20 +2,30 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
-use HWI\Bundle\OAuthBundle\HWIOAuthBundle;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
-
-class DefaultController extends AbstractController
-
+class DefaultController extends Controller
 {
     /**
-     * @Route("/login/{service}", name="hwi_oauth_service_redirect")
+     * @Route("/", name="homepage")
      */
-    public function index( )
+    public function indexAction(Request $request)
     {
+        // replace this example code with whatever you need
+        return $this->render('default/index.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
+        ]);
+    }
 
-        return $this->render('default/index.html.twig');
+    /**
+     * @Route("/test", name="test")
+     */
+    public function testAction()
+    {
+        $data = $this->getUser();
+        echo "<pre>";
+        dump($data);die();
     }
 }
