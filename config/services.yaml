@@ -30,6 +30,6 @@ services:
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
 
-    my.custom.user_provider:
+    my_user_provider:
             class:      App\Security\Core\User\MyFOSUBUserProvider
             arguments: ['@fos_user.user_manager', { google: google_id}]

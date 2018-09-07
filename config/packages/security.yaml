@@ -8,40 +8,40 @@ security:
 
     providers:
         fos_userbundle:
-            id: fos_user.user_provider.username
+            id: fos_user.user_provider.username_email
 
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
+            pattern: ^/
             form_login:
                 provider: fos_userbundle
                 csrf_token_generator: security.csrf.token_manager
-
-            logout:       true
-            anonymous:    true
-        secured_area:
-            pattern: ^/login
-            logout: true
-            anonymous: ~
+                login_path: /login
+                check_path: /login_check
             oauth:
                 resource_owners:
                   google:         "/login/check-google"
                 login_path:        /login
-                use_forward:       false
                 failure_path:      /login
 
-
                 oauth_user_provider:
-                   service: hwi_oauth.user.provider.fosub_bridge
+                   service: my_user_provider
+            logout: true
+            anonymous: true
+
+        login:
+           pattern: ^/login$
+           security: false
 
 
 
     access_control:
-        - { path: ^/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
-        - { path: ^/connect, role: IS_AUTHENTICATED_ANONYMOUSLY }
+
 
