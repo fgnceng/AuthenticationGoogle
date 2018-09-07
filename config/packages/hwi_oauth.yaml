@@ -12,7 +12,7 @@ hwi_oauth:
             type:               google
             client_id:          196047792813-pjv0k8v7femmtf8kpji8u4d21vpen9vs.apps.googleusercontent.com
             client_secret:      v6Dn4Pon5hp0jUrFdLkMgk3i
-            scope:               "email"
+            scope:              "email"
             options:
                 display: popup
                 csrf: true

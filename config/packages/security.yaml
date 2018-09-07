@@ -22,13 +22,16 @@ security:
             logout:       true
             anonymous:    true
         secured_area:
+            pattern: ^/login
+            logout: true
             anonymous: ~
             oauth:
                 resource_owners:
-                  google:             "/login/check-google"
+                  google:         "/login/check-google"
                 login_path:        /login
                 use_forward:       false
                 failure_path:      /login
+
 
                 oauth_user_provider:
                    service: hwi_oauth.user.provider.fosub_bridge
@@ -36,9 +39,9 @@ security:
 
 
     access_control:
-        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
         - { path: ^/connect, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/login/check-google, role: IS_AUTHENTICATED_ANONYMOUSLY }
+
