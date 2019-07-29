@@ -17,21 +17,24 @@ class User extends BaseUser
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
-    /** @ORM\Column(name="facebook_id", type="string", length=255, nullable=true) */
-    protected $facebook_id;
-    /** @ORM\Column(name="facebook_access_token", type="string", length=255, nullable=true) */
-    protected $facebook_access_token;
-    /** @ORM\Column(name="google_id", type="string", length=255, nullable=true) */
-    protected $google_id;
-    /** @ORM\Column(name="google_access_token", type="string", length=255, nullable=true) */
-    protected $google_access_token;
+     protected $id;
+    
+     /** @ORM\Column(name="facebook_id", type="string", length=255, nullable=true) */
+     protected $facebook_id;
+    
+     /** @ORM\Column(name="facebook_access_token", type="string", length=255, nullable=true) */
+     protected $facebook_access_token;
+    
+     /** @ORM\Column(name="google_id", type="string", length=255, nullable=true) */
+     protected $google_id;
+     
+     /** @ORM\Column(name="google_access_token", type="string", length=255, nullable=true) */
+     protected $google_access_token;
 
-    public function __construct()
-    {
+     public function __construct()
+     {
         parent::__construct();
-
-    }
+     }
 
     //YOU CAN ADD MORE CODE HERE !
 
